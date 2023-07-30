@@ -9,9 +9,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws Exception{
-        httpSecurity.
+        httpSecurity.authorizeHttpRequests().anyRequest().authenticated();
 
-
+                return httpSecurity.build();
 
     }
 }
