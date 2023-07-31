@@ -9,14 +9,11 @@ public class ApplicationController {
     public String home(){
         return "login";
     }
-    @GetMapping("/index")
-    public String Index(){
-        return "index";
-    }
 
-    @GetMapping("/index2")
-    public String Index2(){
-        return "index2";
+
+    @GetMapping("/_layout")
+    public String Layout(){
+        return "_layout";
     }
 
 
