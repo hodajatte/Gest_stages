@@ -5,16 +5,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ApplicationController {
-    @GetMapping("/login")
-    public String home(){
-        return "login";
-    }
+  // @GetMapping("/")
+   //public String home(){
+    //  return "redirect:/index";
+   // }
 
-
-    @GetMapping("/_layout")
-    public String Layout(){
-        return "_layout";
+   @GetMapping("/index")
+    public String Index(){
+      return "index";
     }
+   // @GetMapping("/_layout")
+    //public String Layout(){
+        //return "_layout";
+    //}//
 
 
 }

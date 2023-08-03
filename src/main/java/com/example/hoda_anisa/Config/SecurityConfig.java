@@ -28,7 +28,23 @@ public class SecurityConfig {
     }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws Exception{
-        httpSecurity.formLogin();
+        httpSecurity.formLogin().loginPage("/login").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/static/**").permitAll();
+       httpSecurity.authorizeHttpRequests().requestMatchers("css/style-responsive.css").permitAll();
+      httpSecurity.authorizeHttpRequests().requestMatchers("css/style.css").permitAll();
+     httpSecurity.authorizeHttpRequests().requestMatchers("img/bg-1.jpg").permitAll();
+     httpSecurity.authorizeHttpRequests().requestMatchers("css/line-icons.css").permitAll();
+     httpSecurity.authorizeHttpRequests().requestMatchers("css/style-responsive.css").permitAll();
+    httpSecurity.authorizeHttpRequests().requestMatchers("css/font-awesome.css").permitAll();
+     httpSecurity.authorizeHttpRequests().requestMatchers("css/elegant-icons-style.css").permitAll();
+     httpSecurity.authorizeHttpRequests().requestMatchers("css/bootstrap.min.css").permitAll();
+      //httpSecurity.authorizeHttpRequests().requestMatchers("js/html5shiv.js").permitAll();
+    // httpSecurity.authorizeHttpRequests().requestMatchers("js/respond.min.js").permitAll();
+       // httpSecurity.authorizeHttpRequests().requestMatchers("").permitAll();
+        //httpSecurity.authorizeHttpRequests().requestMatchers(" img/bg-1.jpg").permitAll();
+
+       /* httpSecurity.authorizeHttpRequests().requestMatchers("/user/**").hasRole("USER");
+        httpSecurity.authorizeHttpRequests().requestMatchers("/admin/**").hasRole("ADMIN");*/
         httpSecurity.authorizeHttpRequests().anyRequest().authenticated();
                 return httpSecurity.build();
 
